@@ -1,7 +1,10 @@
 .App {
   text-align: center;
 }
-
+* {
+  height: auto;
+  overflow: auto;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -50,10 +53,6 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-}
-
-.container {
-  padding: 30px;
 }
 
 img {
@@ -148,5 +147,132 @@ td {
   background-color: #fff;
   pointer-events: none;
 }
+.ant-list-item-meta-title {
+  font-size: 10px;
+}
 
+.left-icon {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+}
 
+.right-list {
+  width: 55%;
+}
+
+.item-icon {
+  margin-top: 15px;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.header-chat-form, .footer-chat-form {
+  display: flex;
+  margin: 10px 10px;
+}
+
+.group-name {
+  width: 50%;
+}
+.notification {
+  margin-top: 5px;
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.icon {
+  padding-left: 20px;
+}
+
+.fa {
+  color: #c5c3d8;
+}
+
+.fa-paper-plane{
+  color: #756bf4 !important;
+}
+
+.name-member {
+  display: flex;
+}
+
+.avt-name-member {
+  margin-right: 20px;
+}
+
+.avt-left {
+  width: 5%;
+  float: left;
+  margin: 20px;
+  margin-right: 0;
+}
+
+.avt-right {
+  width: 5%;
+  float: right;
+  margin: 20px;
+  margin-right: 0;
+}
+
+.chat-box {
+  width: 100%;
+  padding: 15px;
+}
+
+.message-left,
+.message-right {
+  width: 65%;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.message-left {
+  float: left;
+}
+.message-right {
+  float: right;
+}
+
+.chat-content {
+  height: auto;
+  overflow: auto;
+  margin-top: 30%;
+}
+
+.user-infor{
+  width: 100%;
+}
+
+.ant-card, .ant-card-bordered, .ant-card-hoverable{
+  width: 315px;
+}
+
+.user-infor{
+  display: flex;
+  flex-direction: column;
+}
+
+.user-description{
+  margin-top: 30px;
+}
+
+.history-title, .time-act, .content-act{
+  text-align: center;
+
+}
+
+.time-act{
+  color: #a8a7bb
+}
+
+.content-act{
+  color:#b1afc3
+}
+
+.history-activity{
+  padding: 10px;
+}
