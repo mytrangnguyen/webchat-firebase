@@ -5,7 +5,7 @@ import {
   Text,
   Input,
 } from "../styleComponent/styleComponent";
-import { Avatar, List } from "antd";
+import { Avatar } from "antd";
 
 function ChatContent(props) {
   return (
@@ -16,13 +16,13 @@ function ChatContent(props) {
         </div>
         <div className="notification">
           <div className="icon">
-            <i class="fa fa-bell"></i>
+            <i className="fa fa-bell"></i>
           </div>
           <div className="icon">
-            <i class="fa fa-user"></i>
+            <i className="fa fa-user"></i>
           </div>
           <div className="icon">
-            <i class="fa fa-user"></i>
+            <i className="fa fa-user"></i>
           </div>
         </div>
       </div>
@@ -44,14 +44,16 @@ function ChatContent(props) {
           </div>
           <div className="message-left">
             <Text>Hello. How are you today?</Text>
+            <span className="time-left">My Trang 11:02</span>
           </div>
         </div>
         <div className="chat-box">
-          <div className="message-right">
-            <Text>Hello. How are you today?</Text>
-          </div>
           <div className="avt-right">
             <Avatar src="https://icons.iconarchive.com/icons/webalys/kameleon.pics/512/Woman-9-icon.png" />
+          </div>
+          <div className="message-right">
+            <Text>Hello. I am so good, right now. How about you?</Text>
+            <span className="time-right">Bao Han 11:02</span>
           </div>
         </div>
         <div className="chat-box">
@@ -59,7 +61,44 @@ function ChatContent(props) {
             <Avatar src="https://cdn.icon-icons.com/icons2/1736/PNG/512/4043260-avatar-male-man-portrait_113269.png" />
           </div>
           <div className="message-left">
-            <Text>Hello. How are you today?</Text>
+            <Text>I have a fever so Im quite tired....  </Text>
+            <span className="time-left">Duy Lam 11:02</span>
+          </div>
+        </div>
+        <div className="chat-box">
+          <div className="avt-right">
+            <Avatar src="https://icons.iconarchive.com/icons/webalys/kameleon.pics/512/Woman-9-icon.png" />
+          </div>
+          <div className="message-right">
+            <Text>Hello. I am so good, right now. How about you?</Text>
+            <span className="time-right">Bao Han 11:02</span>
+          </div>
+        </div>
+        <div className="chat-box">
+          <div className="avt-left">
+            <Avatar src="https://cdn.icon-icons.com/icons2/1736/PNG/512/4043260-avatar-male-man-portrait_113269.png" />
+          </div>
+          <div className="message-left">
+            <Text>I have a fever so Im quite tired....  </Text>
+            <span className="time-left">Duy Lam 11:02</span>
+          </div>
+        </div>
+        <div className="chat-box">
+          <div className="avt-right">
+            <Avatar src="https://icons.iconarchive.com/icons/webalys/kameleon.pics/512/Woman-9-icon.png" />
+          </div>
+          <div className="message-right">
+            <Text>Hello. I am so good, right now. How about you?</Text>
+            <span className="time-right">Bao Han 11:02</span>
+          </div>
+        </div>
+        <div className="chat-box">
+          <div className="avt-left">
+            <Avatar src="https://cdn.icon-icons.com/icons2/1736/PNG/512/4043260-avatar-male-man-portrait_113269.png" />
+          </div>
+          <div className="message-left">
+            <Text>I have a fever so Im quite tired....  </Text>
+            <span className="time-left">Duy Lam 11:02</span>
           </div>
         </div>
       </div>
@@ -69,13 +108,19 @@ function ChatContent(props) {
         </div>
         <div className="notification">
           <div className="icon">
-            <i class="fa fa-paperclip"></i>
+            <a href="# ">
+              <i className="fa fa-paperclip"></i>
+            </a>
           </div>
           <div className="icon">
-            <i class="fa fa-user"></i>
+            <a href="# ">
+              <i className="fa fa-user"></i>
+            </a>
           </div>
           <div className="icon">
-            <i class="fa fa-paper-plane"></i>
+            <a href="# ">
+              <i className="fa fa-paper-plane"></i>
+            </a>
           </div>
         </div>
       </div>

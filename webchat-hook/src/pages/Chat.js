@@ -1,23 +1,37 @@
 import React from "react";
-import { Row, Col } from "antd";
+import { Row, Col, Layout } from "antd";
 import "antd/dist/antd.css";
-
-import LeftContent from "../components/LeftContent";
+// import LeftContent from "../components/LeftContent";
 import ChatContent from "../components/ChatContent";
 import RightContent from "../components/RightContent";
+import HeaderPage from "../components/HeaderPage";
+// import Sidebar from "../components/Sidebar";
+
+const { Header, Content } = Layout;
+
 function Chat(props) {
   return (
-    <Row>
-      <Col span={6}>
-        <LeftContent />
-      </Col>
-      <Col span={14}>
-        <ChatContent />
-      </Col>
-      <Col span={4}>
-        <RightContent />
-      </Col>
-    </Row>
+    <Layout>
+      <Header>
+        <HeaderPage />
+      </Header>
+      <Content>
+        <Row>
+          {/* <Col span={1}>
+            <Sidebar />
+          </Col>
+          <Col span={5}>
+            <LeftContent />
+          </Col> */}
+          <Col span={18}>
+            <ChatContent />
+          </Col>
+          <Col span={6}>
+            <RightContent />
+          </Col>
+        </Row>
+      </Content>
+    </Layout>
   );
 }
 

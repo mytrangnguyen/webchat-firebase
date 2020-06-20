@@ -1,27 +1,56 @@
 import React from "react";
 import { Wrapper, Text, Title } from "../styleComponent/styleComponent";
-import { Card } from "antd";
-import History from './History'
+import { Card, List } from "antd";
+import UserList from "./UserList";
 
 const { Meta } = Card;
 const data = [
-    {
-        time: "About 1 hour ago",
-        content: "Mỹ Trang đã cập nhật ảnh đại diện của cô ấy"
+  {
+    name: "Bao Ngoc",
+    avatar:
+      "https://petnhatrang.com/wp-content/uploads/2019/04/4-8-689x400.jpg",
+  },
+  {
+    name: "Bao Han",
+    avatar:
+      "https://i.pinimg.com/originals/53/57/4b/53574b40f2caccb3f69a929e176f5d7a.jpg",
+  },
+  {
+    name: "Gia Bao",
+    avatar:
+      "https://i0.wp.com/bestlifeonline.com/content/uploads/2018/06/corgi-surprised-1-1024x1019.jpg",
+  },
+  {
+    name: "Ngoc Duy",
+    avatar:
+      "https://i.pinimg.com/originals/a4/99/da/a499da39d8439206619d56537d857d99.jpg",
+  },
+  {
+    name: "Ngoc Huy",
+    avatar:
+      "https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375_960_720.png",
+  },
+  {
+    name: "My Linh",
+    avatar:
+      "https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375_960_720.png",
+  },
+  {
+    name: "Duy Lam",
+    avatar:
+      "https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375_960_720.png",
+  },
+  {
+    name: "My Trang",
+    avatar:
+      "https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375_960_720.png",
+  },
+];
 
-    },
-    {
-        time: "About 2 hour ago",
-        content: "Mỹ Trang đã cập nhật ảnh đại diện của cô ấy"
-
-    },
-    {
-        time: "About 3 hour ago",
-        content: "Mỹ Trang đã cập nhật ảnh đại diện của cô ấy"
-
-    }
-]
 function RightContent(props) {
+  const renderItem = (item) => {
+    return <UserList data={item} />;
+  };
   return (
     <Wrapper>
       <div className="user-infor">
@@ -40,19 +69,19 @@ function RightContent(props) {
           </Card>
         </div>
         <div className="user-description">
-          <Text>
-            In this example, the image will float to the right in the paragraph,
-            and the text in the paragraph will wrap around the image
-          </Text>
+          <Text>Win yourself first - Keep moving forward</Text>
         </div>
       </div>
       <div className="chat-history">
         <div className="history-title">
-          <Title>Chat history</Title>
+          <Title>List of user</Title>
         </div>
-        {
-            data.map((item)=><History time={item.time} content={item.content} />)
-        }
+        <List
+        className="list-active-user"
+          itemLayout="horizontal"
+          dataSource={data}
+          renderItem={(item) => renderItem(item)}
+        />
       </div>
     </Wrapper>
   );

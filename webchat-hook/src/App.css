@@ -3,7 +3,6 @@
 }
 * {
   height: auto;
-  overflow: auto;
 }
 .App-logo {
   height: 40vmin;
@@ -152,22 +151,22 @@ td {
 }
 
 .left-icon {
-  width: 20%;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
 
 .right-list {
-  width: 55%;
+  width: 80%;
 }
 
 .item-icon {
-  margin-top: 15px;
-  align-items: center;
+  margin-top: 25px;
   padding-left: 10px;
 }
 
-.header-chat-form, .footer-chat-form {
+.header-chat-form,
+.footer-chat-form {
   display: flex;
   margin: 10px 10px;
 }
@@ -186,11 +185,12 @@ td {
   padding-left: 20px;
 }
 
-.fa {
+.fa-icon {
   color: #c5c3d8;
+  font-size: 15px;
 }
 
-.fa-paper-plane{
+.fa-paper-plane {
   color: #756bf4 !important;
 }
 
@@ -219,15 +219,17 @@ td {
 .chat-box {
   width: 100%;
   padding: 15px;
+  overflow: hidden;
+  display: inline-block;
 }
 
 .message-left,
 .message-right {
-  width: 65%;
   background-color: #ffffff;
   border-radius: 5px;
   padding: 10px;
   margin: 10px 0;
+  display: inline-block;
 }
 
 .message-left {
@@ -238,41 +240,212 @@ td {
 }
 
 .chat-content {
-  height: auto;
-  overflow: auto;
-  margin-top: 30%;
+  overflow-y: scroll;
+  height: 430px;
+  margin-top: 15%;
 }
 
-.user-infor{
+.user-infor {
   width: 100%;
 }
 
-.ant-card, .ant-card-bordered, .ant-card-hoverable{
+.ant-card,
+.ant-card-bordered,
+.ant-card-hoverable {
   width: 315px;
 }
 
-.user-infor{
+.user-infor {
   display: flex;
   flex-direction: column;
 }
 
-.user-description{
+.user-description {
   margin-top: 30px;
-}
-
-.history-title, .time-act, .content-act{
   text-align: center;
-
 }
 
-.time-act{
-  color: #a8a7bb
+.history-title,
+.time-act,
+.content-act {
+  text-align: center;
 }
 
-.content-act{
-  color:#b1afc3
+.time-act {
+  color: #a8a7bb;
 }
 
-.history-activity{
+.content-act {
+  color: #b1afc3;
+}
+
+.history-activity {
   padding: 10px;
+}
+
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+.time-left {
+  float: left;
+  color: #999;
+}
+
+.ant-avatar-image::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 14.8%;
+  right: 14.8%;
+  width: 10px;
+  height: 10px;
+  background-color: #746af4;
+  transform: translate(5px, 5px); /* half width and height */
+  border-radius: 50%;
+}
+
+.avt {
+  position: relative;
+}
+
+.ant-avatar {
+  overflow: unset !important;
+}
+
+.avt-left,
+.avt-right {
+  padding-top: 15px;
+}
+
+.title-page {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fa-plus {
+  color: #c5c3d8;
+}
+
+.plus {
+  margin-top: 10px;
+}
+
+.bottom-icon {
+  margin-top: 65px;
+}
+
+.top-icon {
+  margin-bottom: 68%;
+}
+
+.hmZYoF {
+  padding: 4%;
+  background: white;
+  overflow: hidden;
+}
+
+.logo {
+  width: 64px;
+  height: 60px;
+  margin-top: -18px;
+}
+
+.ant-layout-header {
+  background-color: #ffffff !important;
+}
+
+.header {
+  justify-content: space-between;
+  display: flex;
+}
+/* .avt {
+  overflow: hidden;
+} */
+.list-user {
+  font-size: 10px !important;
+}
+.list-active-user {
+  height: 330px;
+  overflow-y: scroll;
+}
+
+.user-avt {
+  display: flex;
+}
+
+.fa-paperclip,
+.fa-user {
+  color: #c5c3d8;
+  font-size: 17px;
+}
+
+/* scroll bar */
+
+/* width */
+.list-active-user::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.list-active-user::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+.list-active-user::-webkit-scrollbar-thumb {
+  background: #d3d2df;
+  border-radius: 10px;
+}
+
+/* width */
+.chat-content::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.chat-content::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+.chat-content::-webkit-scrollbar-thumb {
+  background: #d3d2df;
+  border-radius: 10px;
+}
+
+/* hover button */
+
+button {
+  display: none;
+}
+.avt:hover button {
+  display: block;
+  position: relative;
+  z-index: 999;
+  padding: 15px !important;
+  line-height: 0;
+  background-color: #7f76f5;
+  border: none;
+}
+
+.ant-avatar > img {
+  border-radius: 50%;
+}
+.jnzdjH {
+  margin: 0 !important;
+}
+a {
+  font-size: 14px;
+}
+
+.ant-layout-header {
+  position: relative;
+  z-index: 1;
+  box-shadow: 0px 2px 3px #b2b6b9;
+}
+
+.sc-fzozJi:focus {
+  outline: none !important;
 }

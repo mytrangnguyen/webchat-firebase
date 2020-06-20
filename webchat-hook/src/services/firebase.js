@@ -1,5 +1,5 @@
 import firebase from "firebase";
-import uuid from "uuid/v4";
+// import uuid from "uuid/v4";
 
 firebase.initializeApp({
   apiKey: "AIzaSyAqEv81FqrgvLdVog9N5bcfUoNVjtswk3U",
