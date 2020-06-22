@@ -39,3 +39,11 @@ export const addNewUserToRealTimeDatabase = ({ id, email, name, role }) => {
     role: role,
   });
 };
+
+export const addNewUser = ({ id, email, password }) => {
+  database.ref("usersTable/" + id).set({
+    id: id,
+    email: email,
+    password: password,
+  });
+};

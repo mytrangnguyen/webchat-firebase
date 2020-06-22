@@ -2,6 +2,7 @@ import React from "react";
 import { Wrapper, Text, Title } from "../styleComponent/styleComponent";
 import { Card, List } from "antd";
 import UserList from "./UserList";
+import { useSelector } from "react-redux";
 
 const { Meta } = Card;
 const data = [
@@ -47,7 +48,8 @@ const data = [
   },
 ];
 
-function RightContent(props) {
+const RightContent = (props) => {
+  const userLogin = useSelector((state) => state.user.userLogin);
   const renderItem = (item) => {
     return <UserList data={item} />;
   };
@@ -58,14 +60,9 @@ function RightContent(props) {
           <Card
             hoverable
             style={{ width: 240 }}
-            cover={
-              <img
-                alt="example"
-                src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-              />
-            }
+            cover={<img alt="example" src={userLogin.img} />}
           >
-            <Meta title="Mi Lan" description="Mumbai India" />
+            <Meta title={userLogin.name} description="Mumbai India" />
           </Card>
         </div>
         <div className="user-description">
@@ -77,7 +74,7 @@ function RightContent(props) {
           <Title>List of user</Title>
         </div>
         <List
-        className="list-active-user"
+          className="list-active-user"
           itemLayout="horizontal"
           dataSource={data}
           renderItem={(item) => renderItem(item)}
@@ -85,6 +82,6 @@ function RightContent(props) {
       </div>
     </Wrapper>
   );
-}
+};
 
 export default RightContent;

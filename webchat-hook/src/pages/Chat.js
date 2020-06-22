@@ -6,33 +6,41 @@ import ChatContent from "../components/ChatContent";
 import RightContent from "../components/RightContent";
 import HeaderPage from "../components/HeaderPage";
 // import Sidebar from "../components/Sidebar";
+import { useSelector } from "react-redux";
 
 const { Header, Content } = Layout;
 
-function Chat(props) {
+const Chat = () => {
+  const userLogin = useSelector((state) => state.user.userLogin);
   return (
-    <Layout>
-      <Header>
-        <HeaderPage />
-      </Header>
-      <Content>
-        <Row>
-          {/* <Col span={1}>
+    <div>
+      {userLogin.name ? (
+        <Layout>
+          <Header>
+            <HeaderPage />
+          </Header>
+          <Content>
+            <Row>
+              {/* <Col span={1}>
             <Sidebar />
           </Col>
           <Col span={5}>
             <LeftContent />
           </Col> */}
-          <Col span={18}>
-            <ChatContent />
-          </Col>
-          <Col span={6}>
-            <RightContent />
-          </Col>
-        </Row>
-      </Content>
-    </Layout>
+              <Col span={18}>
+                <ChatContent />
+              </Col>
+              <Col span={6}>
+                <RightContent />
+              </Col>
+            </Row>
+          </Content>
+        </Layout>
+      ) : (
+        <HeaderPage />
+      )}
+    </div>
   );
-}
+};
 
 export default Chat;
