@@ -35,10 +35,10 @@ export const getAllUserFromFirestore = createAsyncThunk("users", async () => {
   }
 });
 
-export const doSignup =  (userInfo, dispatch) => {
+export const doSignup = (userInfo, dispatch) => {
   try {
     console.log("action", userInfo);
-    let response =  auth
+    let response = auth
       .createUserWithEmailAndPassword(userInfo.email, userInfo.password)
       .then((res) => {
         // addNewUser({
@@ -66,7 +66,6 @@ export const doSignup =  (userInfo, dispatch) => {
 export const doSignin = async (userInfo) => {
   try {
     console.log("vào login nè");
-    
     await auth
       .signInWithEmailAndPassword(userInfo.email, userInfo.password)
       .then((res) => {
@@ -76,14 +75,11 @@ export const doSignin = async (userInfo) => {
         console.log("error", error);
       });
 
-    
     getHistory().push("/");
-
   } catch (error) {
     console.log("lỗi login nè", error);
-    
   }
-}
+};
 
 export const loadData = () => {
   return (dispatch, getState) => {
@@ -124,7 +120,7 @@ const userSlice = createSlice({
     error: null,
     userLoginEmailPassword: {
       email: "",
-      password: ""
+      password: "",
     },
     userLogin: {
       name: "",
@@ -156,9 +152,9 @@ const userSlice = createSlice({
     register: (state, action) => {
       state.isRegister = action.payload;
     },
-    signIn: (state, action) =>{
+    signIn: (state, action) => {
       state.userLoginEmailPassword = action.payload;
-    }
+    },
   },
 
   extraReducers: {

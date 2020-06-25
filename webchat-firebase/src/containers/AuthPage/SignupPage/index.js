@@ -9,7 +9,7 @@ import selectors from "../selectors";
 import { auth } from "../../../services/firebase";
 import { addNewUser } from "../../../services/firebase";
 
-import {actions, doSignup} from "../../../features/userSlice"
+import {doSignup} from "../../../features/authSlice";
 const FormItem = Form.Item;
 const { Text } = Typography;
 
@@ -30,7 +30,7 @@ const Signup = ({ form }) => {
   // const signupLoading = useSelector(selectors.selectSignupLoading);
 
   const doSubmit = (userInfo) => {
-    doSignup(userInfo);
+    dispatch(doSignup(userInfo));
   };
 
   const onRegister = (event) => {

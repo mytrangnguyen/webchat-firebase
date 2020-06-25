@@ -60,51 +60,51 @@ const action = {
       });
     }
   },
-  // doSignup: (userInfo) => async (dispatch) => {
-  //   try {
-  //     console.log("action", userInfo);
+  doSignup: (userInfo) => async (dispatch) => {
+    try {
+      console.log("action", userInfo);
 
-  //     dispatch({ type: constants.SIGNUP_START });
+      dispatch({ type: constants.SIGNUP_START });
 
-  //     // call api: signin
-  //     // let response = await fetchSignup(userInfo).then(rs =>  rs);
-  //     let response = await auth
-  //       .createUserWithEmailAndPassword(userInfo.email, userInfo.password)
-  //       .then((res) => {
-  //         // addNewUser({
-  //         //   id: res.user.uid,
-  //         //   firstname: firstname,
-  //         //   lastname: lastname,
-  //         //   email: email,
-  //         //   password: password,
-  //         // });
-  //         console.log("res", res);
+      // call api: signin
+      // let response = await fetchSignup(userInfo).then(rs =>  rs);
+      let response = await auth
+        .createUserWithEmailAndPassword(userInfo.email, userInfo.password)
+        .then((res) => {
+          // addNewUser({
+          //   id: res.user.uid,
+          //   firstname: firstname,
+          //   lastname: lastname,
+          //   email: email,
+          //   password: password,
+          // });
+          console.log("res", res);
 
-  //         return res;
-  //       })
-  //       .catch((err) => {
-  //         console.error(err);
-  //       });
-  //     console.log("response register", response);
+          return res;
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+      console.log("response register", response);
 
-  //     // window.localStorage.setItem(
-  //     //     "asauth",
-  //     //     JSON.stringify(response.data)
-  //     // );
-  //     dispatch({
-  //       type: constants.SIGNUP_SUCCESS,
-  //       payload: null,
-  //     });
-  //     getHistory().push("/");
-  //   } catch (error) {
-  //     console.log("errror register", error);
+      window.localStorage.setItem(
+          "asauth",
+          JSON.stringify(response.data)
+      );
+      dispatch({
+        type: constants.SIGNUP_SUCCESS,
+        payload: null,
+      });
+      getHistory().push("/");
+    } catch (error) {
+      console.log("errror register", error);
 
-  //     dispatch({
-  //       type: constants.SIGNUP_ERROR,
-  //       payload: Errors.selectMessage(error),
-  //     });
-  //   }
-  // },
+      dispatch({
+        type: constants.SIGNUP_ERROR,
+        payload: Errors.selectMessage(error),
+      });
+    }
+  },
 
   doSendResetPassword: (email) => async (dispatch) => {
     try {
